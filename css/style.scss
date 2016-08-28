@@ -1,0 +1,279 @@
+@import 'fontface';
+@import 'reset';
+
+$blue: #1000FF;
+$grey: #d8d8d8;
+$darker-grey: #555555;
+$dark-grey: #888888;
+
+
+$ameri-text: "american_textregular", Helvetica, sans-serif;
+
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@viewport{width: device-width;}
+
+@font-face
+{
+font-family: "American Text";
+src: url('../AmericanTextBT-Regular'),
+     url('../AmericanTextBT-Regular'); /* IE9 */
+} 
+
+body{
+  margin: 0;  
+  background-color: $blue;
+}
+
+h1{
+  color: white;
+  font-size: 7em;
+  padding: 150px 100px;
+  font-family: $ameri-text;
+}
+
+h2{
+  color: white;
+  font-size: 4.5em;
+  width: 1000px;
+  padding-top: 0px;
+  margin: auto;
+  font-family: $ameri-text;
+
+}
+
+h3{
+  color: black;
+  font-size: 7em;
+  font-family: $ameri-text;
+  margin-top: 70px;
+}
+
+h4{
+  font-family: sans-serif; 
+}
+
+/*FIX find out child selection
+.featured-text-wrapper.h3{
+  margin-top: 100px;
+}
+*/
+
+p{
+  font-size: 1.7em;   
+  font-family: "Cronos pro", sans-serif;
+  line-height: 1em;
+
+}
+
+.wip{
+  font-family: sans-serif;
+  font-size: 1em;
+  color: orange;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  /*text-shadow: 1px 1px 1px #000000;*/
+}
+
+.logo{
+  width: 350px;  
+  padding: 50px 0px 0px 100px;
+}
+
+.book{
+    width: 16.65%;
+    display: block;
+    float: left;
+}
+
+.hero-display-wrapper{
+  width:100%;   
+  height: 90vh;
+  background-image: url(../img/hero2.jpg);
+  background-size: 80%;
+  background-repeate: no-repeat, repeat;
+  background-position: center;
+}
+
+.book-display-wrapper{
+   width:100%;   
+}
+
+.featured-book-wrapper{
+  display:block;
+  float: left;
+}
+
+.featured-book{
+  width: 300px;
+}
+
+.buy-now{
+  display: block;
+  width: 90px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1em;
+  text-align: center;
+  background-color: $blue;
+  padding: 15px 10px;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 20px;
+  /*border-radius: 5px;*/
+  @include border-radius(3px);
+
+  
+}
+
+.featured-text-wrapper{
+  display: block;
+  float: left;
+  width: 600px;
+  margin-left: 60px;
+  /*background-color: black;*/
+}
+
+.quote-wrapper-1{
+  background-color: $blue;
+  width: 100%;
+  height: 220px;
+  float: left;
+}
+
+.featured-wrapper{
+  background-color: white;
+  width:100%;
+  float:left;
+}
+
+.column-wrapper{
+  /*background-color: gray;*/
+  /*height:1100px;*/
+  width:960px;
+  margin: auto;
+}
+
+.footer-column-wrapper{
+  @extend .column-wrapper;
+  display: flex;
+  justify-content: space-between;
+  /*margin-bottom: 50px;*/
+}
+
+
+.single-content-wrapper{
+  margin: 50px 0px;
+  /*background-color: black;*/
+  height:600px;
+  width:960px;
+  float: left;
+}
+
+.footer{
+  display: block;
+  float: left;
+  background-color: $grey;    
+  width: 100%;
+  height: 200px;
+}
+
+.footer-column{
+  float: right;
+  padding-top: 20px;
+  ul{
+    li{
+        font-family: sans-serif;
+        color: $dark-grey;
+        margin: 5px 0px;
+      a:link{
+        color: $darker-grey;
+        text-decoration:none;
+      }
+      a:visited{
+        color: $darker-grey;
+        text-decoration:none;
+      }   
+    } 
+  }
+}
+
+.footer-column:last-child{
+  padding-bottom: 30px;
+}
+
+
+//MOBILE
+@media screen and (max-width: 668px) {
+  body{
+    overflow-x: hidden;
+  }
+    
+  h2{
+    text-align: center;
+    font-size: 1em;
+    padding-top: 5px;
+    width: 240px;
+    
+  }
+    
+  .quote-wrapper-1{
+    height: 70px;   
+  }
+    
+  .hero-display-wrapper{
+    background-image: url(../img/hero-mobile.jpg);
+    background-size: 150%;
+    width: 100%;
+  }
+    
+  .book{
+    width: 50%;
+  }
+  .hide, .hide2{
+    display:none;   
+  }
+    
+  .logo{
+    display: block;
+    width: 70%;
+    padding-top: 50px;
+    padding-left: 0px;
+    margin: auto;
+  }
+    
+  .footer{
+    height: auto;   
+  }
+    
+  .footer-column-wrapper{
+    width: 250px;   
+    display: block;
+  }
+  
+  .footer-column{
+    float: none;
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 668px) and (max-width: 1100px) {
+  .book{
+    width: 25%;
+  }
+  .hide{
+    display:none;   
+  }  
+    
+}
+
+
